@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSharpHomes Revit Add-in</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background-color: #F5F5F5;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #00408E; /* Carlisle Blue */
+        }
+        code {
+            background-color: #E0E0E0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        ul {
+            margin: 0.5rem 0 1rem 2rem;
+        }
+        .feature {
+            margin-bottom: 1rem;
+        }
+
+        /* Header Styles */
+        header {
+            color: #FFFFFF;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header img {
+            width: 100%;
+            height: auto; /* maintain aspect ratio */
+            display: block; /* removes small whitespace below image */
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #797D7E; /* Carlisle Grey */
+        }
+
+        .space {margin: 0.5rem 0 1.5rem 2rem; /* spacing inside lists */}
+        ol {margin: 0.5rem 0 1.5rem 2rem; /* spacing inside lists */}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header with Carlisle Homes Logo -->
+    <header>
+        <h1>CSharpHomes Revit Add-in</h1>
+        <img src="./img/CSharpHomes-Toolbar.jpg" alt="CSharpHomes">
+    </header>
+
+    <!-- Main Content -->
+    <section id="features">
+        <h2>Features</h2>
+        <h3>Links Panel</h3>
+        <ul>
+            <li><strong>ResCode</strong> – Opens the Victorian Residential Development Code in your default browser.</li>
+            <li><strong>NCC</strong> – Opens the National Construction Code (NCC) 2022 edition in your default browser.</li>
+            <li><strong>Project Folder</strong> – Opens the directory containing the current Revit project file in Windows Explorer.</li>
+        </ul>
+
+        <h3>Tools Panel</h3>
+        <ul>
+            <li class="space"><strong>Rotate</strong> – Rotates selected elements in the active view by a user-specified angle.
+                <ol>
+                    <li>Prompts for element selection and angle input via a custom options bar.</li>
+                    <li>Applies rotation around the vertical axis at the element’s center.</li>
+                </ol>
+                <!-- Rotate GIF -->
+                <img src="./img/rotate.gif" alt="Rotate Demo" width="100%">
+            </li>
+            <li class="space"><strong>Export DWG</strong> – Exports selected sheets to DWG format.
+                <ol>
+                    <li>Select the sheets you want to export.</li>
+                    <li>Choose the export directory when prompted.</li>
+                    <li>The add-in exports the sheets using company standards.</li>
+                    <li>After export, the destination folder automatically opens for you.</li>
+                </ol>
+                <!-- CAD GIF -->
+                <img src="./img/CAD.gif" alt="CAD Demo" width="100%">
+            </li>
+            <li class="space"><strong>Export Transmittal</strong> – Generates a document transmittal Excel file summarizing selected sheets and their revisions.
+                <ol>
+                    <li>Select the sheets and revisions you want to include in the transmittal.</li>
+                    <li>Choose the directory to save the Excel file.</li>
+                    <li>The add-in creates or updates the transmittal file with:
+                    <ul>
+                        <li>Sheet numbers and names</li>
+                        <li>Current revision</li>
+                        <li>Revision history</li>
+                    </ul>
+            </li>
+                </ol>
+                <!-- DocTrans GIF -->
+                <img src="./img/DocTrans.gif" alt="DocTrans Demo" width="100%">
+            </li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Iorhan Vendruscolo.</p>
+    </footer>
+
+</body>
+</html>
