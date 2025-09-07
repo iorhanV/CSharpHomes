@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>CSharpHomes</Name>
+    <Assembly>CSharpHomes\CSharpHomes.dll</Assembly>
+    <AddInId>47E852A9-1940-47EF-8E0C-E1120C0C2E6E</AddInId>
+    <FullClassName>CSharpHomes.Application</FullClassName>
+    <VendorId>Development</VendorId>
+    <VendorDescription></VendorDescription>
+    <VendorEmail></VendorEmail>
+  </AddIn>
+</RevitAddIns>
