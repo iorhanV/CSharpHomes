@@ -1,0 +1,15 @@
+﻿<RevitAddIns>
+    <AddIn Type="Application">
+        <Name>CSharpHomes</Name>
+        <Assembly>CSharpHomes\CSharpHomes.dll</Assembly>
+        <AddInId>47E852A9-1940-47EF-8E0C-E1120C0C2E6E</AddInId>
+        <FullClassName>CSharpHomes.Application</FullClassName>
+        <VendorId>Development</VendorId>
+        <VendorDescription></VendorDescription>
+        <VendorEmail></VendorEmail>
+    </AddIn>
+    <ManifestSettings>
+        <UseRevitContext>False</UseRevitContext>
+        <ContextName>CSharpHomes</ContextName>
+    </ManifestSettings>
+</RevitAddIns>

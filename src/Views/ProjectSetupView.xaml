@@ -1,0 +1,139 @@
+﻿<Window x:Class="CSharpHomes.Views.ProjectSetupView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="ProjectSetupView"
+        SizeToContent="Height"
+        Height="Auto" Width="700"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <SolidColorBrush x:Key="RevBGColor" Color="#FFEEEEEE"/>
+
+        <Style x:Key="IndexColumnStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="Foreground" Value="{DynamicResource pyRevitAccentBrush}"/>
+        </Style>
+
+        <Style x:Key="DefaultColumnStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="ToolTip" Value="{Binding tooltip}"/>
+            <Setter Property="ContextMenu" Value="{DynamicResource ItemContextMenu}" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding printable}" Value="False">
+                    <Setter Property="Foreground" Value="#bdbdbd" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    
+    
+    <StackPanel Margin="10">
+        <DataGrid x:Name="setupData"
+                  ItemsSource="{Binding Setup}"
+                  AutoGenerateColumns="False"
+                  Margin="10,0,10,10"
+                  BorderThickness="1"
+                  RowHeaderWidth="0"
+                  CanUserSortColumns="False"
+                  CanUserAddRows="False"
+                  CanUserReorderColumns="False"
+                  CanUserDeleteRows="False"
+                  HeadersVisibility="Column"
+                  ColumnWidth="*"
+                  HorizontalGridLinesBrush="#dedede"
+                  VerticalGridLinesBrush="#dedede"
+                  EnableColumnVirtualization="True"
+                  EnableRowVirtualization="True" SelectionChanged="setupData_SelectionChanged">
+        
+            <DataGrid.Columns>
+                <!-- Description column -->
+                <DataGridTextColumn Header="Description"
+                                    Binding="{Binding Description}"
+                                    MinWidth="100"
+                                    IsReadOnly="True"
+                                    CellStyle="{StaticResource IndexColumnStyle}" CanUserResize="False"/>
+        
+                <!-- Value column -->
+                <DataGridTextColumn Header="Value"
+                                    Binding="{Binding OriginalValue}"
+                                    MinWidth="100"
+                                    Width="255"
+                                    CanUserResize="False"
+                                    IsReadOnly="True"
+                                    CellStyle="{StaticResource DefaultColumnStyle}"/>
+
+                
+                <!-- Clean Input column -->
+                <DataGridTemplateColumn Header="Clean Input" MinWidth="150" Width="255" CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding}">
+                                <ContentControl.Style>
+                                    <Style TargetType="ContentControl">
+                                        <!-- Default: TextBox -->
+                                        <Setter Property="ContentTemplate">
+                                            <Setter.Value>
+                                                <DataTemplate>
+                                                    <TextBox Text="{Binding Input, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                </DataTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+
+                                        <!-- Special case: Design Option = ComboBox -->
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Description}" Value="Design Option">
+                                                <Setter Property="ContentTemplate">
+                                                    <Setter.Value>
+                                                        <DataTemplate>
+                                                            <ComboBox ItemsSource="{Binding Options}"
+                                                                      SelectedItem="{Binding Input, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                                      IsEditable="False" />
+                                                        </DataTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ContentControl.Style>
+                            </ContentControl>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Apply column -->
+                <DataGridTemplateColumn Header="Apply" MinWidth="50" Width="50" CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      IsChecked="{Binding Apply, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!-- Button Grid -->
+        <Grid Margin="10,0,10,0" HorizontalAlignment="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="CancelBtn" Height="25"
+                    Grid.Column="0" Grid.Row="0"
+                    Content="Cancel"
+                    Margin="0,0,3,0"
+                    Click="CancelBtnClick" Width="120" HorizontalAlignment="Right" />
+            <Button x:Name="ApplyBtn" Height="25"
+                    Grid.Column="1" Grid.Row="0"
+                    Content="Apply Changes"
+                    Margin="3,0,0,0"
+                    Click="ApplyBtnClick" Width="120" HorizontalAlignment="Right" />
+        </Grid>
+    </StackPanel>
+</Window>

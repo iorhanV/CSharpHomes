@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="ToolsRotate" xml:space="preserve">
+        <value>Description:
+Rotate selected elements counterclockwise to specified angle.</value>
+    </data>
+    <data name="LinksResCode" xml:space="preserve">
+        <value>Description:
+Opens Victorian Planning Schemes ResCode website.</value>
+    </data>
+    <data name="LinksNCC" xml:space="preserve">
+        <value>Description:
+Opens NCC website.</value>
+    </data>
+    <data name="LinksFolder" xml:space="preserve">
+        <value>Description:
+Opens the folder of your project.</value>
+    </data>
+    <data name="ToolsExpCAD" xml:space="preserve">
+        <value>Description:
+Export selected sheets using company DWG export standards.</value>
+    </data>
+    <data name="ToolsDocTrans" xml:space="preserve">
+        <value>Description:
+Create document transmittal from selected revisions and sheets.</value>
+    </data>
+    <data name="ToolsProjSetup" xml:space="preserve">
+        <value>Description:
+Extracts project data from a PDF and applies it to the Revit Project.</value>
+    </data>
+</root>
