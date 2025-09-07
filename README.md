@@ -4,15 +4,15 @@
 
 ## Features
 
-### Links Panel
+## Links Panel
 
 - **ResCode** – Opens the Victorian Residential Development Code in your default browser.
 - **NCC** – Opens the National Construction Code (NCC) 2022 edition in your default browser.
 - **Project Folder** – Opens the directory containing the current Revit project file in Windows Explorer.
 
-### Tools Panel
+## Tools Panel
 
-#### Rotate
+### Rotate
 Rotates selected elements in the active view by a user-specified angle.
 
 1. Prompts for element selection and angle input via a custom options bar.
@@ -20,7 +20,7 @@ Rotates selected elements in the active view by a user-specified angle.
 
 ![Rotate Demo](./html/img/Rotate.gif)
 
-#### Export DWG
+### Export DWG
 Exports selected sheets to DWG format.
 
 1. Select the sheets you want to export.
@@ -30,7 +30,7 @@ Exports selected sheets to DWG format.
 
 ![CAD Demo](./html/img/CAD.gif)
 
-#### Export Transmittal
+### Export Transmittal
 Generates a document transmittal Excel file summarising selected sheets and their revisions.
 
 1. Select the sheets and revisions you want to include in the transmittal.
@@ -42,7 +42,7 @@ Generates a document transmittal Excel file summarising selected sheets and thei
 
 ![DocTrans Demo](./html/img/DocTrans.gif)
 
-#### Project Setup
+### Project Setup
 Extracts project data from a PDF and applies it to the Revit Project.
 
 1. Select the project PDF when prompted.
